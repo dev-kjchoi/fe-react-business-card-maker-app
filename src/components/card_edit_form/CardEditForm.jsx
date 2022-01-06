@@ -20,7 +20,8 @@ const CardEditForm = ({ card, updateCard, deleteCard }) => {
     });
   };
 
-  const onSubmit = () => {
+  const onSubmit = (event) => {
+    event.preventDefault();
     deleteCard(card);
   };
 
@@ -30,20 +31,20 @@ const CardEditForm = ({ card, updateCard, deleteCard }) => {
         className={styles.input}
         type="text"
         name="name"
-        defaultValue={name}
+        value={name}
         onChange={onChange}
       />
       <input
         className={styles.input}
         type="text"
         name="company"
-        defaultValue={company}
+        value={company}
         onChange={onChange}
       />
       <select
         className={styles.select}
         name="theme"
-        defaultValue={theme}
+        value={theme}
         onChange={onChange}
       >
         <option value="light">Light</option>
@@ -54,20 +55,20 @@ const CardEditForm = ({ card, updateCard, deleteCard }) => {
         className={styles.input}
         type="text"
         name="title"
-        defaultValue={title}
+        value={title}
         onChange={onChange}
       />
       <input
         className={styles.input}
         type="text"
         name="email"
-        defaultValue={email}
+        value={email}
         onChange={onChange}
       />
       <textarea
         className={styles.textarea}
         name="message"
-        defaultValue={message}
+        value={message}
         onChange={onChange}
       ></textarea>
       <div className={styles.fileInput}>
